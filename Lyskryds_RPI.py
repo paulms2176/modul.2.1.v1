@@ -34,17 +34,21 @@ def redred(x):# Udgangs punkt for lyskrydset
     if x=="NS": #Hvis lyskrydset kommer fra NS skal den gå til EV
         x="EV"
         print("NS RED   EV RED")
+        NSgul.off()
+        EVgul.off()
         NSred.on()
         EVred.on()
         sleep(2)
-        return EV(x)
+        return EV()
     elif x=="EV": #Hvis lyskrydset kommer fra EV skal den gå til NS
         x="NS"
         print("NS red   EV red")
+        NSgul.off()
+        EVgul.off()
         NSred.on()
         EVred.on()
         sleep(2)
-        return NS(x)
+        return NS()
 def NS():
     NSgul.on()
     sleep(2)
