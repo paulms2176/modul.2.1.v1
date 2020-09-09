@@ -46,16 +46,42 @@ def redred(x):# Udgangs punkt for lyskrydset
         sleep(2)
         return NS(x)
 def NS():
+    NSgul.on()
+    sleep(2)
+    return NS_green()
 
 def NS_green():
+    NSred.off()
+    NSgul.off()
+    NSgreen.on()
+    sleep(2)
+    return NS_gul()
 
 def NS_gul():
+    NSgreen.off()
+    NSgul.on()
+    sleep(2)
+    x = "NS"
+    return redred(x)
 
 def EV():
+    EVgul.on()
+    sleep(2)
+    return EV_green()
 
 def EV_green():
+    EVred.off()
+    EVgul.off()
+    EVgreen.on()
+    sleep(2)
+    return EV_gul()
 
 def EV_gul():
+    EVgreen.off()
+    EVgul.on()
+    sleep(2)
+    x = "EV"
+    return redred(x)
 
 state=redred(x="EV")
 while state: state=redred(x="EV")
