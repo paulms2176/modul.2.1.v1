@@ -24,10 +24,10 @@ def state1(z):
     return state2(z, bo)
 
 def state2(z, bo):
-    k = int (input ("Konnekteringer a 0.5dB\n"))
-    k1 = k * 0.5
-    s = int (input("Splidsninger a 0,1 dB\n"))
-    s1 = s * 0.1
+    k = int (input ("Konnekteringer a 0.75dB\n"))
+    k1 = k * 0.75
+    s = int (input("Splidsninger a 0,3 dB\n"))
+    s1 = s * 0.3
     f = int (input("Fiber i km.\n"))
     fdb = f * z
     l = bo - k1 - s1 - fdb
@@ -42,11 +42,11 @@ def state3(l):
     no = l - sh - r
     if no >= 0:
         print('\x1b[4;30;42m' + 'Den er ok og overholder dit fiber budget' + '\x1b[0m')
-        print('\x1b[4;30;42m' + 'Netto overskud i dB er:' + '\x1b[0m', no)
+        print('\x1b[4;30;42m' + 'Netto overskud i dB er:' + str (no) + '\x1b[0m')
         print("")
     elif no < 0:
         print('\x1b[6;30;41m' + 'Den er ikke ok og overholder ikke dit fiber budget' + '\x1b[0m')
-        print('\x1b[6;30;41m' + 'Netto underskudet i dB er:' + '\x1b[0m', no)
+        print('\x1b[6;30;41m' + 'Netto underskudet i dB er: ' + str (no) + '\x1b[0m')
         print("")
     return state0()
 
